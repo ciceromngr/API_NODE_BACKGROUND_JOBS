@@ -1,10 +1,11 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn} from "typeorm";
-import { v4 as uuid } from 'uuid'
 @Entity('users')
 class Users {
     
-    @PrimaryColumn()
-    readonly id: string
+    @PrimaryColumn({
+        generated: "increment" 
+    })
+    readonly id: number
 
     @Column()
     name: string
@@ -20,10 +21,6 @@ class Users {
 
     @UpdateDateColumn()
     updatedAt: Date
-
-    constructor() {
-        if (!this.id) this.id = uuid()
-    }
 
 }
 
