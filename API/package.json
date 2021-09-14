@@ -1,0 +1,27 @@
+{
+  "name": "7bfe46b0b42f80ff90a264aa2e6cb903",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ciceromngr/API_NODE_BACKGROUND_JOBS.git",
+  "author": "ciceromngr <cicerotransformice@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts",
+    "dev:typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "ts-node-dev": "^1.1.8",
+    "@types/uuid": "^8.3.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.37",
+    "uuid": "^8.3.2"
+  }
+}
