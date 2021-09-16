@@ -11,9 +11,9 @@ class UsersController {
         const user = await usersService.createUser_POST({ name, email, password })
 
         // Fila para envio de email de boas vindas !!
-        await axios.post('http://localhost:4001/registrationMail', { name, email })
-        
-        return res.status(200).json(user)
+        const resp = await axios.post('http://localhost:4001/registrationMail', { name, email })
+
+        return res.status(200).json({ user, mail: resp.data })
     }
 }
 

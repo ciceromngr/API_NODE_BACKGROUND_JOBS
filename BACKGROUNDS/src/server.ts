@@ -11,7 +11,7 @@ app.post('/registrationMail', async (req, res) => {
     const { name, email } = req.body
     await Queue.add('RegistrationMail', { name, email })
 
-    return res.json({ mail: 'Envio com Sucesso!'})
+    return res.json({ mail: `Um Email de boas vindas foi enviado para voce!`})
 })
 
 app.listen(4001, () => console.log(`Server running on localhost:4001`))
