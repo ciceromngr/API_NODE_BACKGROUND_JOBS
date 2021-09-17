@@ -8,6 +8,21 @@ import { UsersRepository } from "../repository/UsersRepository";
 
 class UsersService {
 
+
+    async get_all_users() {
+        const usersRepository = getCustomRepository(UsersRepository)
+
+        const users = await usersRepository.find()
+
+        if (users.length <= 0) throw new Error('Not exist users!')
+
+        return users.map(user => ({
+            id: user.id,
+            name: user.name,
+            email: user.email
+        }))
+    }
+
     async createUser_POST({ name, email, password }: IUserRegistrationRequest) {
         const usersRepository = getCustomRepository(UsersRepository)
 
